@@ -391,6 +391,12 @@ bool ph_string_equal_cstr(ph_string_t *a, const char *b);
  */
 int ph_string_compare(const ph_string_t *a, const ph_string_t *b);
 
+ /** Reverses the string
+*
+* This function reverses the string received by it as an argument
+*/
+void ph_string_reverse(ph_string_t *str); 
+
 /** Formatted print to string
  */
 int ph_string_vprintf(ph_string_t *a, const char *fmt, va_list ap);
@@ -399,14 +405,7 @@ int ph_string_vprintf(ph_string_t *a, const char *fmt, va_list ap);
  *
  * Uses ph_vprintf_core()
  */
-int ph_string_printf(ph_string_t *a, const char *fmt, ...)
-
-/** Reverses the string
-*
-* This function reverses the string received by it as an argument
-*/
-void ph_string_reverse(ph_string_t *str); 
-
+ int ph_string_printf(ph_string_t *a, const char *fmt, ...)
 #ifdef __GNUC__
   __attribute__((format(printf, 2, 3)))
 #endif
